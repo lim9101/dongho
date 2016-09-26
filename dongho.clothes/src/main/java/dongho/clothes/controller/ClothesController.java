@@ -95,7 +95,7 @@ public class ClothesController {
 		return true;
 	}
 	
-	
+	//로그인체크기능
 	@RequestMapping("check")
 	@ResponseBody
 	public boolean check(String id,String pw,HttpSession session){
@@ -103,12 +103,14 @@ public class ClothesController {
 		return userService.check(id, pw);
 	}
 	
+	//상품가저오기
 	@RequestMapping ("getProducts")
 	@ResponseBody
 	public List<Product> getProducts(){
 		return hostService.getProducts();
 	}
 	
+	//회원추가기능
 	@RequestMapping("addUser")
 	@ResponseBody
 	public boolean addUser(User user,HttpSession session){
@@ -117,6 +119,7 @@ public class ClothesController {
 		return result;
 	}
 	
+	//회원정보수정기능
 	@RequestMapping("updateInfo")
 	@ResponseBody
 	public boolean updateInfo(User user,HttpSession session){
@@ -126,6 +129,7 @@ public class ClothesController {
 		return result;
 	}
 	
+	//상품추가기능
 	@RequestMapping("addProduct")
 	@ResponseBody
 	public boolean addProduct(Product product,HttpSession session){
