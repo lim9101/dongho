@@ -1,0 +1,179 @@
+@font-face{
+	font-family:'hanbaekB';
+	src:url('../img/HANBAEKB.TTF') format('truetype');
+}
+@font-face{
+	font-family:'hywulm';
+	src:url('../img/HYWULM.TTF') format('truetype');
+}
+.btn-default{
+	border-radius: 20px;
+}
+
+body{ margin: 0 0; font-family: hywulm; }
+
+/* 햄버거 메뉴 */
+	.pushmenu {
+	  color: black;
+	  background-color: #FAFAFA;
+	  text-align: center;
+	  width: 300px;
+	  height: 100%;
+	  top: 0;
+	  z-index: 1000;
+	  position: fixed;
+	}
+	
+	.pushmenu #info {
+	  color: #FFFFFF;
+	  font-size: 1em;
+	  padding: 0;
+	  margin: 0;
+	  background-color: #cc0066;
+	  height: 50px;
+	  border-right: solid 1px #FAFAFA;
+	}
+	
+	.links {
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0 0 0 25%;
+	  width: 50%;
+	}
+	
+	.links li { margin-top: 30px; }
+	
+	.links li a {
+	  position: relative;
+	  display: block; /* drops the nav vertically*/
+	  font-size: 1em;
+	  text-decoration: none;
+	  padding: 14px;
+	  color: #cc0066;
+	}
+	
+	.links li a:after {
+	  content: '';
+	  display: block;
+	  position: absolute;
+	  left: 20px;
+	  bottom: -5px;
+	  width: 0;
+	  height: 4px;
+	  background-color: #f1f1f1;
+	  -webkit-transition: width 0.3s ease;
+	  -moz-transition: width 0.3s ease;
+	  transition: width 0.3s ease;
+	}
+	
+	.links li a:hover:after { width: 70%; }
+	
+	.links li a:active { color: #dbdbdb; }
+	
+	.pushmenu-left { left: -300px; }
+	
+	.pushmenu-left.pushmenu-open { left: 0; }
+	
+	.pushmenu-push {
+	  overflow-x: hidden;
+	  position: relative;
+	  left: 0;
+	}
+	
+	.pushmenu-push-toright { left: 300px; }
+	
+	/*Transition*/
+	.pushmenu, .pushmenu-push {
+	  -webkit-transition: all 0.5s ease;
+	  -moz-transition: all 0.5s ease;
+	  transition: all 0.5s ease;
+	}
+	
+	#loginId{
+		float: left;
+		height: 50px;
+		padding: 15px 0 10px 0;
+		width: 70%;
+/*  		border: solid 1px black;  */
+	}
+	#editInfo{
+		float: right;
+		margin: 0 0;
+		padding: 0 10px 0 0;
+	}
+	#infoBtn{
+		height: 50px;
+		width: 50px;
+		color: #FFFFFF;
+		background-color: #cc0066;
+		border: none;
+	}
+
+/* body */
+	#nav{
+		position: fixed;
+		width: 100%;
+	 	background-color: #cc0066;
+	  	height: 50px;
+ 	  	padding: 10px 10px 10px 10px;
+/* 	  	border: solid 1px black;   */
+	}
+	#nav_list{
+	  background: url(../img/icon_nav.png) no-repeat left top;
+	  cursor: pointer;
+	  height: 27px;
+	  width: 33px;
+	  text-indent: -99999em;
+	  float:left;
+	}
+	#title{
+		font-family: hanbaekB;
+		float: left;
+		color: #FFFFFF;
+		font-size: 1.7em;
+		padding: 0px 15px 0px 15px;
+		margin-top: 0px;
+	}
+	#addBtn{
+		height: 30px;
+		width: 30px;
+		color: #FFFFFF;
+		background-color: #cc0066;
+		border: solid 1px #FFFFFF;
+		padding: 0 0;
+		margin-left: 50px;
+		position: right;
+	}
+	#searchBtn{
+		height: 30px;
+		width: 30px;
+		color: #FFFFFF;
+		background-color: #cc0066;
+		border: solid 1px #FFFFFF;
+		padding: 0 0;
+		margin-right: 10px;
+		position: right;
+	}	
+	#productList{
+		margin-top: 50px;
+		padding: 5px 10px;
+/*  		border: solid 1px black;  */
+	}
+	.productInfo{
+		width: 50%;
+		height: 25%;
+		border: solid 1px #DBDBDC;
+		float: left; 
+		background-color: #FFFFFF;	
+		padding: 0;
+		color: black;
+		margin: 5px 0;
+	}
+	.img-rounded{
+		margin: 0;
+		border: solid 1px red;
+		float: left; 
+	}
+	#name, #price{
+		margin: 5px 10px;
+	}

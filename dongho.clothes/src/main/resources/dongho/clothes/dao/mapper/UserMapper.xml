@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dongho.clothes.dao.mapper.UserMapper">
+	<resultMap type="user" id="userMap">
+		<id property="id" column="user_id"/>
+		<result property="pw" column="password"/>
+		<result property="userName" column="user_name"/>
+		<result property="address" column="address"/>
+		<result property="phoneNum" column="phone_num"/>
+		<result property="accountNum" column="account_num"/>
+		<result property="joinDate" column="join_date"/>
+		<result property="question" column="question"/>
+		<result property="answer" column="answer"/>
+		<result property="bank" column="bank"/>
+	</resultMap>
+	<select id="getUsers" resultMap="userMap">
+		select user_id, password,user_name
+		,address,phone_num,account_num,join_date
+		,question, answer,bank
+		from users
+	</select>
+	<select id="getUser" parameterType="string" resultMap="userMap">
+		select user_id, password,user_name,address,phone_num
+		,account_num,join_date
+		,question, answer,bank
+		from users
+		where user_id = #{id}
+	</select>
+	<insert id="addUser" parameterType="user">
+	insert into users (user_id id,PASSWORD pw,USER_NAME userName,ADDRESS,PHONE_NUM,ACCOUNT_NUM accountNum,QUESTION,ANSWER,BANK )
+	 values(#{id,jdbcType=VARCHAR},#{pw,jdbcType=VARCHAR},#{userName, jdbcType=VARCHAR},#{address,jdbcType=VARCHAR}
+	,#{phoneNum},#{accountNum},#{question,jdbcType=VARCHAR},#{answer,jdbcType=VARCHAR},#{bank,jdbcType=VARCHAR})
+	</insert>
+	<update id="updateUser" parameterType="user">
+	update users set user_id=#{id}, password=#{pw},user_name=#{userName},
+		address=#{address},phone_num=#{phoneNum},account_num=#{accountNum},
+		question=#{question},answer=#{answer},bank=#{bank}
+	where user_id=#{id}
+	</update>
+</mapper>

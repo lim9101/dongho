@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>main</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+	$menuLeft = $('.pushmenu-left');
+	$nav_list = $('#nav_list');
+	
+	$nav_list.click(function() {
+		$(this).toggleClass('active');
+		$('.pushmenu-push').toggleClass('pushmenu-push-toright');
+		$menuLeft.toggleClass('pushmenu-open');
+	});
+});
+</script>
+<style>
+@font-face{
+	font-family:'hywulm';
+	src:url('../img/HYWULM.TTF') format('truetype');
+}
+.btn-default{
+	border-radius: 20px;
+}
+
+body{ margin: 0 0; font-family: hywulm; }
+#hamMenu{}
+	.pushmenu {
+	  color: black;
+	  background-color: #FAFAFA;
+	  text-align: center;
+	  width: 300px;
+	  height: 100%;
+	  top: 0;
+	  z-index: 1000;
+	  position: fixed;
+	}
+	
+	.pushmenu #info {
+	  color: #FFFFFF;
+	  font-size: 1em;
+	  padding: 0;
+	  margin: 0;
+	  background-color: #cc0066;
+	  height: 50px;
+	  border-right: solid 1px #FAFAFA;
+	}
+	
+	.links {
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0 0 0 25%;
+	  width: 50%;
+	}
+	
+	.links li { margin-top: 30px; }
+	
+	.links li a {
+	  position: relative;
+	  display: block; /* drops the nav vertically*/
+	  font-size: 1em;
+	  text-decoration: none;
+	  padding: 14px;
+	  color: #cc0066;
+	}
+	
+	.links li a:after {
+	  content: '';
+	  display: block;
+	  position: absolute;
+	  left: 20px;
+	  bottom: -5px;
+	  width: 0;
+	  height: 4px;
+	  background-color: #f1f1f1;
+	  -webkit-transition: width 0.3s ease;
+	  -moz-transition: width 0.3s ease;
+	  transition: width 0.3s ease;
+	}
+	
+	.links li a:hover:after { width: 70%; }
+	
+	.links li a:active { color: #dbdbdb; }
+	
+	.pushmenu-left { left: -300px; }
+	
+	.pushmenu-left.pushmenu-open { left: 0; }
+	
+	.pushmenu-push {
+	  overflow-x: hidden;
+	  position: relative;
+	  left: 0;
+	}
+	
+	.pushmenu-push-toright { left: 300px; }
+	
+	/*Transition*/
+	.pushmenu, .pushmenu-push {
+	  -webkit-transition: all 0.5s ease;
+	  -moz-transition: all 0.5s ease;
+	  transition: all 0.5s ease;
+	}
+	
+	#nav_list {
+	  background: url(../img/icon_nav.png) no-repeat left top;
+	  cursor: pointer;
+	  height: 27px;
+	  width: 33px;
+	  text-indent: -99999em;
+	  float:left;
+	}
+	
+	nav-list.active { background-position: -331px top; }
+	
+	#loginId{
+		float: left;
+		height: 50px;
+		padding: 15px 0 10px 0;
+		width: 70%;
+/*  		border: solid 1px black;  */
+	}
+	#editInfo{
+		float: right;
+		margin: 0 0;
+		padding: 0 10px 0 0;
+	}
+	#infoBtn{
+		height: 50px;
+		width: 50px;
+		color: #FFFFFF;
+		background-color: #cc0066;
+		border: none;
+	}
+	
+#body{
+/* 	position: fixed; */
+}	
+	#nav{
+		position: fixed;
+	}
+	.buttonset{
+	 	background-color: #cc0066;
+	  	height: 50px;
+ 	  	padding: 10px 20px 20px 10px;
+	}
+	#title{
+		float: left;
+		color: #FFFFFF;
+		font-size: 1.1em;
+		padding: 5px 15px;
+/* 		border: solid 1px black; */
+	}
+	#productBar{
+		position: fixed;
+		height: 50px;
+		width: 100%;
+		color: #DBDBDC;
+		background-color: #fff;
+		margin: none;
+		padding: none;
+		border-bottom: solid #DBDBDC 1px;
+	}
+	#bar{
+		height: 48px;
+		text-align:center;
+		font-size: 15px;
+		color: #bbb;
+		background-color: transparent;
+		border: none;
+	}
+	#barHover{
+		height: 48px;
+		text-align:center;
+		font-size: 1em;
+		background-color: transparent;
+		border: none;
+		color: #cc0066;
+		border-bottom: #cc0066 solid 3px;
+	}
+	#productList{
+		overflow: auto;
+		margin-top: 50px;
+		padding: 10px;
+/* 		border: solid 1px black; */
+	}
+	.productInfo{
+		width: 50%;
+		height: 25%;
+		border: solid 1px #DBDBDC;
+		float: left; 
+		background-color: #FFFFFF;	
+		padding: 0;
+		color: black;
+	}
+	.img-rounded{
+		margin: 0;
+		border: solid 1px red;
+		float: left; 
+	}
+	#name, #price{
+		margin: 5px 10px;
+	}	
+</style>
+</head>
+
+<body>
+<div id="hamMenu" class="pushmenu-push">
+	<nav class="pushmenu pushmenu-left">
+	    <div id="info">
+	    	<div id="loginId">user님이 로그인</div>
+	    	<div id="editInfo">
+	    		<button type="button" id="infoBtn" class="btn" onclick="location.href='editInfo.html'"><span class="glyphicon glyphicon-edit"></span></button>
+	    	</div>
+	    </div>
+	    <ul class="links">
+			<li><a href="#">주문목록</a></li>
+			<li><a href="#">판매목록</a></li>
+		 	<li><a href="#">배송조회</a></li>
+		 	<li><a href="#">설정</a></li>
+		 	<li><a href="#">로그아웃</a></li>
+	    </ul>
+ 	</nav>
+</div>
+
+<div id="body" class="pushmenu-push">
+	<div id="nav" class="navbar">
+    	<div class="buttonset">
+        	<div id="nav_list"></div>	<!-- 햄버거 버튼 자리 -->
+        	<div id="title">ㄴㅔㄴㅐㅇㅗㅅ</div>
+        </div>
+	</div>
+	<div id="productBar" class="container-fluid">
+		<div class="btn-group btn-group-justified">
+			<a href="Main.html" id="barHover" class="btn btn-primary">신규상품</a>
+			<a href="MainBarSecond.html" id="bar" class="btn btn-primary">인기상품</a>
+			<a href="MainBarThird.html" id="bar" class="btn btn-primary">맞춤상품</a>
+		</div>
+	</div>
+	<div id="productList" class="container-fluid">
+		<form action="productDetail.html">
+			<div class="productInfo">	<!-- button type="button"으로 하면 submit이 x -->
+				<img src="" width="100%" height="200px">
+				<div id="name">옷이욯</div>
+				<div id="price">5600원</div>
+			</div>
+			<div class="productInfo">	<!-- button type="button"으로 하면 submit이 x -->
+				<img src="" width="100%" height="200px">
+				<div id="name">옷이욯</div>
+				<div id="price">5600원</div>
+			</div>
+			<div class="productInfo">	<!-- button type="button"으로 하면 submit이 x -->
+				<img src="" width="100%" height="200px">
+				<div id="name">옷이욯</div>
+				<div id="price">5600원</div>
+			</div>
+			<div class="productInfo">	<!-- button type="button"으로 하면 submit이 x -->
+				<img src="" width="100%" height="200px">
+				<div id="name">옷이욯</div>
+				<div id="price">5600원</div>
+			</div>
+			<div class="productInfo">	<!-- button type="button"으로 하면 submit이 x -->
+				<img src="" width="100%" height="200px">
+				<div id="name">옷이욯</div>
+				<div id="price">5600원</div>
+			</div>
+			<div class="productInfo">	<!-- button type="button"으로 하면 submit이 x -->
+				<img src="" width="100%" height="200px">
+				<div id="name">옷이욯</div>
+				<div id="price">5600원</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="bottom" class="pushmenu-push">
+
+</div>	
+</body>
+</html>
